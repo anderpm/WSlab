@@ -66,7 +66,7 @@ if(isset($_SESSION['eposta'])){
     echo "<nav class='main' id='n1' role='navigation'>";
     echo "<span><a href='Layout.php'>Hasiera</a></span>";
     echo "<span><a href='Credits.php'>Kredituak</a></span>";
-    echo "<span><a href='KudeatuErabiltzaileak.php'>Kudeatu erabiltzaileak</a></span>";
+    echo "<span><a href='HandlingAccounts.php'>Kudeatu erabiltzaileak</a></span>";
   echo "</nav>";
   }
 }else{
