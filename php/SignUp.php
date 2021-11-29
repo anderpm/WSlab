@@ -31,6 +31,7 @@
 	$pass2 = test_input($_POST['pwd2']);
 
 	$irregex = "/^[a-z A-Z]+(\.[a-z A-Z]+)@(ehu\.)((eus)|(es))$/";
+	$ir2regex = "/^[a-z A-Z]+@(ehu\.)((eus)|(es))$/";
 	$ikregex = "/^[a-z A-Z]+[0-9]{3}@(ikasle\.ehu\.)((eus)|(es))$/";
 	$deiturakregex = "/^[a-z A-Z]{2,}\s[a-z A-z]{2,}$/";
 
@@ -41,7 +42,7 @@
 	    echo 'alert("Erabiltzaile mota zehaztu behar da!")';
 	    echo '</script>';
 	}else if($mota == 1 && $validate == true){
-	    if(!preg_match($irregex, $eposta)){
+	    if(!preg_match($irregex, $eposta) and !preg_match($ir2regex, $eposta)){
 		$validate = false;
 		echo '<script type ="text/JavaScript">';  
 		echo 'alert("Irakasle eposta gaizki!")';
