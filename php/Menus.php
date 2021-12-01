@@ -1,10 +1,27 @@
 <div id='page-wrap'>
 <header class='main' id='h1'>
+  <?php include '../php/DbConfig.php'?>
   <?php
     session_start();
     if(isset($_SESSION['eposta'])){
       $erab = $_SESSION['eposta'];
       if(strlen($erab) != 0){
+
+        $kon = new mysqli($zerbitzaria, $erabiltzailea, $gakoa, $db);
+        $sql = "SELECT * FROM questions;";
+        $res = mysqli_query($kon, $sql);
+        if(!$kon->query($sql)){
+          die('Errorea:' . $kon->error);
+        }
+        $row= $res->fetch_object();
+        $irudia = $row -> argazkia;
+        $res->close();
+        $kon->close();
+
+        if($irudia != null){
+          echo '<img src="data:image/jpg;base64,'.base64_encode($irudia).'"width="45"/>';
+          echo " ";
+        }
         echo $erab." ";
         echo "(".'<span class="right"><a href="LogOut.php">Logout</a></span>'.")";
       }
