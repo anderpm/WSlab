@@ -46,7 +46,7 @@
 
 	    <!--Eposta sartzeko eremua-->
 	    <label for="eposta">Eposta: *</label>   
-	    <input type="text" id="eposta" name="eposta" value="<?php echo $z_eposta;?>"><br>
+	    <input type="text" id="eposta" name="eposta" value="<?php echo $z_eposta;?>" readonly="readonly"><br>
 
 	    <!--Testerako galdera sartzeko eramu handia-->
 	    <label for="galdera">Galdera: *</label>
